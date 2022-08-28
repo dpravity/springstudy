@@ -14,7 +14,7 @@ git commit -m "메세지 입력"
 git branch -M main
 
 # 5 . git 리모트 연동
-# git remote add origin [url]
+# ex) git remote add origin [url]
 git remote add origin https://github.com/dpravity/springstudy.git
 
 

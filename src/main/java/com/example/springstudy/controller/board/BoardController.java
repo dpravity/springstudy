@@ -2,13 +2,16 @@ package com.example.springstudy.controller.board;
 
 import com.example.springstudy.entity.board.BoardEntity;
 import com.example.springstudy.service.board.BoardService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+@Slf4j
 @Controller
 @RequestMapping(value = "/board")
 public class BoardController {
@@ -60,6 +63,16 @@ public class BoardController {
         BoardEntity board = boardService.boardInsert(boardEntity);
         // TODO 저장 체크
         return "redirect:/board/list";
+    }
+
+    @RequestMapping(value = "/save2", method = RequestMethod.POST)
+    public String boardSave2(@RequestBody BoardEntity boardEntity){
+        // TODO validation
+//        boardEntity.setCreateBy(boardEntity.getBoardWriter());
+//        boardEntity.setModifyBy(boardEntity.getBoardWriter());
+        log.info(boardEntity.toString());
+        // TODO 저장 체크
+        return "board/boardInsert";
     }
 
 

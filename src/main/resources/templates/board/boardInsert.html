@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="/static/library/jquery/v3.6.1/jQuery3.6.1.js"></script>
+    <script src="/static/js/common/common.js"></script>
+    <script src="/static/js/board/board.js"></script>
 </head>
 <body>
 <h1>게시물 생성</h1>
 
 <form method="post" action="/board/save">
-    <p><input name="boardTitle"></p>
-    <p><input name="boardContents"></p>
-    <p><input name="boardWriter"></p>
+    <p><input id="boardTitle" name="boardTitle"></p>
+    <p><input id="boardContents" name="boardContents"></p>
+    <p><input id="boardWriter" name="boardWriter"></p>
     <p><button type="submit">저장</button></p>
 </form>
 
+<button type="button" id="btnTest">테스트</button>
 </body>
 </html>
